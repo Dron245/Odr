@@ -1,17 +1,34 @@
 .menu {
 	// .menu__icon
+	@media (max-width:$tablet){
+		display: flex;
+		align-items: center;
+	}
 	&__icon {
 	}
 	// .menu__body
 	&__body {
-		@media (max-width: $mobile) {
+		display: flex;
+		flex-direction: column;
+		@media (min-width:$tablet){
+			flex-direction: row;
+			align-items: center;
+		}
+		@media (max-width: 1460px) and (min-width: $tablet){
+			justify-content: center;
+		}
+		@media (max-width: $tablet) {
 			position: fixed;
 			width: 100%;
 			height: 100%;
 			left: -100%;
 			top: 0;
 			overflow: auto;
-			padding: toRem(50) toRem(15) toRem(15) toRem(30);
+			background-color: #e1e1e1;
+			._dark & {
+		background-color: black;
+	}
+			padding: toRem(130) toRem(15) toRem(15) toRem(30);
 			transition: left 0.3s;
 			&::before {
 				content: "";
@@ -22,6 +39,10 @@
 				top: 0;
 				transition: left 0.3s;
 				z-index: 2;
+				background-color: #e1e1e1;
+				._dark & {
+		background-color: black;
+	}
 			}
 			.menu-open & {
 				left: 0;
@@ -33,14 +54,44 @@
 	}
 	// .menu__list
 	&__list {
-		@media (max-width: $mobile) {
+		display: flex;
+		@include adaptiveValue("gap", 50, 20,0, 1700, 768);
+		@media (max-width: $tablet) {
+			flex-direction: column;
+			row-gap: 25px;
 		}
 	}
 	// .menu__item
 	&__item {
+	
 	}
 	// .menu__link
 	&__link {
+		position: relative;
+		&::before{
+			content:'';
+			position: absolute;
+			left: 50%;
+			bottom: -5px;
+			width: 80%;
+			height: 3px;
+			background-color: $green;
+			transform-origin: center;
+			transform: translate(-50%, 0) scaleX(0);
+			transition: transform 0.3s ease-in-out;
+		}
+
+		&:hover::before{
+			transform: translate(-50%, 0) scaleX(1);
+		}
+		font-size: 22px;
+		color: #366;
+		._dark & {
+			color: #fffefe;
+		}
+		@media (max-width:$tablet){
+			@include adaptiveValue("font-size", 40, 22,0,1000,360);
+		}
 		@media (max-width: $mobile) {
 		}
 	}
@@ -49,11 +100,11 @@
 //Burger Icon
 .icon-menu {
 	display: none;
-	@media (max-width: $mobile) {
+	@media (max-width: $tablet) {
 		display: block;
 		position: relative;
-		width: toRem(30);
-		height: toRem(18);
+		width: toRem(50);
+		height: toRem(28);
 		z-index: 5;
 		@media (any-hover: none) {
 			cursor: default;
@@ -68,6 +119,9 @@
 			width: 100%;
 			height: toRem(2);
 			background-color: #000;
+			._dark & {
+				background-color: #fffefe;
+			}
 		}
 		&::before {
 			top: 0;

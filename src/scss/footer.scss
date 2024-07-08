@@ -1,40 +1,143 @@
 //====================================================================================================
 .footer {
-
+	position: relative;
+	padding: toRem(90) toRem(0) toRem(30) toRem(0);
+	background: url("@img/footer-bg.jpg")  72% / cover no-repeat;
+	z-index: 1;
+	@media (max-width: em(1500)){
+		
+	}
+	&::after{
+		content:'';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0.75;
+		z-index: -1;
+		background-color: black;
+	}
+	&__backdrop {
+		
+	}
 	&__container {
 	}
 
 	&__top {
+		display: grid;
+		grid-template-columns: repeat(4, auto);
+		justify-content: space-between;
+		@include adaptiveValue("gap", 180, 40, 0, 1470, 991.99);
+		@media (max-width:$tablet){
+			grid-template-columns: repeat(2, 1fr);
+			// justify-items: center;
+		}
+		@media (max-width:550px){
+			 grid-template-columns: 1fr; 
+		}
 	}
 
 	&__col {
-
 		&_last {
+			@media (min-width:550px){
+				text-align: right;
+			}
 		}
 	}
 
 	&__title {
+		font-size: 36px;
+		color: #fff;
+		position: relative;
+		@media (max-width:$tablet){
+			display: inline-block;
+		}
+		&::after{
+			content:'';
+			position: absolute;
+			bottom: -20px;
+			left: 0;
+			width: 75%;
+			height: 3px;
+			background-color: $green;
+		}
 	}
 
 	&__list {
+		margin-top: 65px;
+		display: grid;
+		row-gap: 30px;
 	}
 
 	&__item {
+		color: #fff;
+		
 	}
 
 	&__link {
+		line-height: 1.4;
+		transition: color 0.3s;
+		font-size: 24px;
+		@media (max-width: em(550)){
+			  @include adaptiveValue("font-size", 36, 20,0,550,360);
+		}
+		&:hover{
+			color: #ffffff93;
+		}
 	}
 
 	&__logo {
+		position: relative;
+		width: 330px;
+		@media (max-width:$mobileSmall){
+			 width: 250px; 
+		}
+		@media (max-width:$tablet) and (min-width: 550px){
+			margin-left: auto;
+		}
+		svg {
+			width: 100%;
+			height: auto;
+		}
+		&::after{
+			content:'';
+			position: absolute;
+			bottom: -20px;
+			right: 0;
+			width: 65%;
+			height: 3px;
+			background-color: $green;
+		}
 	}
 
 	&__text {
+		color: #fff;
+		font-size: 24px;
+		margin-top: 65px;
 	}
 
 	&__bottom {
+		margin-top: 240px;
+		position: relative;
+		&::before{
+			content:'';
+			position: absolute;
+			height: 3px;
+			top: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 116%;
+			background-color: $green;
+		}
 	}
 
 	&__bottom-text {
+		// border: 3px solid $green;
+	padding-top: 40px;
+		font-size: 16px;
+color: #fff;
+line-height: 1.4;
 	}
 }
 

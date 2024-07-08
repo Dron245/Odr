@@ -9,12 +9,23 @@ textarea {
 	appearance: none;
 }
 .input {
-	border-radius: 0 !important;
-	width: 100%;
+	// border-radius: 0 !important;
+	width: 0%;
+	transition: width 0.3s;
 	display: block;
 	padding: 0px 20px;
-	border: 1px solid #eee;
-	caret-color: inherit;
+	
+	// caret-color: inherit;
+	padding: 10px toRem(10);
+	border-radius: 10px;
+	border: 0;
+	._active & {
+		width: 100%;
+		border: 2px solid #eee;
+	}
+	&:focus {
+		outline: 0;
+	}
 	&._form-focus {
 	}
 	&._form-error {
