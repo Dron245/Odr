@@ -1,1 +1,15 @@
 // Заголовки, общие БЄМ блоки и прочее...
+h2[class*="__title"] {
+	font-size: 36px;
+	color: #000;
+}
+.decor {
+	position: absolute;
+	width: 70%;
+	height: 4px;
+	background-color: #00B240;
+	// top: 110%;
+	left: 50%;
+	transform: translateX(-50%);
+	transition: opacity 0.3s;
+}
