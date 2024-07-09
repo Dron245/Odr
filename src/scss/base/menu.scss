@@ -55,6 +55,7 @@
 	// .menu__list
 	&__list {
 		display: flex;
+		flex-wrap: wrap;
 		@include adaptiveValue("gap", 50, 20,0, 1700, 768);
 		@media (max-width: $tablet) {
 			flex-direction: column;
