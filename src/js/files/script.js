@@ -8,7 +8,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 	function documentActions(e) {
 		const targetElement = e.target;
-		console.log(targetElement);
+		// console.log(targetElement);
 		if (targetElement.closest('.search__label')) {
 			targetElement.closest('.search').classList.add('_active')
 		} else if (!targetElement.closest('.search') && document.querySelector('.search')) {

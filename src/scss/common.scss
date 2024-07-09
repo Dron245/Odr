@@ -1,15 +1,44 @@
 // Заголовки, общие БЄМ блоки и прочее...
 h2[class*="__title"] {
+	position: relative;
 	font-size: 36px;
 	color: #000;
+	text-align: center;
+	display: inline-block;
+	@media (max-width:$mobile){
+		 @include adaptiveValue("font-size", 48, 32,0,768,360);
+	}
+	&::after{
+		content:'';
+		position: absolute;
+		height: 3px;
+		background-color: $green;
+		bottom: -12px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 70%;
+	}
 }
 .decor {
 	position: absolute;
 	width: 70%;
-	height: 4px;
+	height: 3px;
 	background-color: #00B240;
 	// top: 110%;
 	left: 50%;
 	transform: translateX(-50%);
-	transition: opacity 0.3s;
+	// transition: opacity 0.3s;
+}
+
+.link {
+	display: inline-block;
+	// background-color: $green;
+	// background: linear-gradient(90deg, rgba(0,152,42,1) 0%, rgba(123,255,103,1) 35%);
+	background: linear-gradient(90deg, rgba(0,152,42,1) 0%, rgba(120,193,109,1) 35%);
+
+	padding: 20px toRem(15);
+	color: #fff;
+	font-size: 24px;
+	display: grid;
+	place-items: center;
 }
