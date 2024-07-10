@@ -5,6 +5,7 @@ h2[class*="__title"] {
 	color: #000;
 	text-align: center;
 	display: inline-block;
+	// outline: 1px solid;
 	@media (max-width:$mobile){
 		 @include adaptiveValue("font-size", 48, 32,0,768,360);
 	}
@@ -34,8 +35,8 @@ h2[class*="__title"] {
 	display: inline-block;
 	// background-color: $green;
 	// background: linear-gradient(90deg, rgba(0,152,42,1) 0%, rgba(123,255,103,1) 35%);
-	background: linear-gradient(90deg, rgba(0,152,42,1) 0%, rgba(120,193,109,1) 35%);
-
+	// background: linear-gradient(90deg, rgba(0,152,42,1) 0%, rgba(120,193,109,1) 35%);
+	background: url('@img/partners/button-bg.webp') 0 0 / cover no-repeat;
 	padding: 20px toRem(15);
 	color: #fff;
 	font-size: 24px;

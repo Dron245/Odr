@@ -11,18 +11,23 @@
 		background-color: white;
 	}
 	&__container {
+		& > * {
+			// outline: 1px solid red;
+		}
 		@media (min-width:$tablet){
 			display: grid;
+			// display: flex;
+			// justify-content: space-between;
 		}
 		max-width: 1700px;
 		grid-template-columns: auto auto 150px auto;
-		grid-template-columns: 20% auto 10% 10%;
+		grid-template-columns: 15% auto 10% 10%;
 		// grid-template-columns: 150px auto % 10%;
 		align-items: center;
 		@media (max-width: 1460px) and (min-width:$tablet){
 			grid-template-columns: 1fr 1fr 1fr;
 			grid-template-rows: 1fr 1fr;
-			justify-items: center;
+			// justify-items: center;
 		}
 	}
 
@@ -30,12 +35,21 @@
 		font-size: 22px;
 		color: #fff;
 		transition: color 0.3s;
+		white-space: nowrap;
 		
 		._dark & {
 			color: #366;
 		}
 		@media (max-width:$tablet){
 			@include adaptiveValue("font-size", 40, 22,0,1000,360);
+		}
+		&_email {
+			font-weight: 600;
+		}
+		&_tel {
+			@media (min-width:$tablet){
+				margin-left: auto; 
+			}
 		}
 	}
 
@@ -48,11 +62,12 @@
 	}
 
 	&__logo {
+		margin-inline: auto;
 		._dark & svg g path:not(.not-color) {
 			fill: #366;
 		}
 		@media (min-width:$tablet){
-			margin: 0 toRem(50);
+			// margin: 0 toRem(50);
 		}
 		@media (max-width:$tablet){
 			position: relative;
