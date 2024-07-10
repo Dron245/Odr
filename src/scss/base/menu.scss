@@ -8,8 +8,10 @@
 	}
 	// .menu__body
 	&__body {
-		display: flex;
-		flex-direction: column;
+		// display: flex;
+		// flex-direction: column;
+		display: grid;
+		grid-template-columns: 35% auto 35%;
 		@media (min-width:$tablet){
 			flex-direction: row;
 			align-items: center;

@@ -16,6 +16,8 @@
 		}
 		max-width: 1700px;
 		grid-template-columns: auto auto 150px auto;
+		grid-template-columns: 20% auto 10% 10%;
+		// grid-template-columns: 150px auto % 10%;
 		align-items: center;
 		@media (max-width: 1460px) and (min-width:$tablet){
 			grid-template-columns: 1fr 1fr 1fr;
